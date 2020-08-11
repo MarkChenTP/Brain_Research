@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_Intro">
+
+    <fragment
+        android:id="@+id/navigation_Intro"
+        android:name="ucla.erlab.brainresearch.studyui.intro.IntroductionFragment"
+        android:label="@string/title_introduction"
+        tools:layout="@layout/fragment_introduction">
+        <action
+            android:id="@+id/action_IntroToConnPulseOx"
+            app:destination="@+id/navigation_ConnPulseOx" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_ConnPulseOx"
+        android:name="ucla.erlab.brainresearch.studyui.connpulseox.ConnectPulseOxFragment"
+        android:label="@string/title_connPulseOx"
+        tools:layout="@layout/fragment_connpulseox">
+        <action
+            android:id="@+id/action_ConnPulseOxToIntro"
+            app:popUpTo="@+id/navigation_Intro" />
+
+        <action
+            android:id="@+id/action_ConnPulseOxToUserQuery"
+            app:destination="@+id/navigation_UserQuery" />
+        <action
+            android:id="@+id/action_ConnPulseOxToPlanQuery"
+            app:destination="@+id/navigation_PlanQuery" />
+        <action
+            android:id="@+id/action_ConnPulseOxToDayQuery"
+            app:destination="@+id/navigation_DayQuery" />
+        <action
+            android:id="@+id/action_ConnPulseOxToBP1"
+            app:destination="@+id/navigation_BloodPressure1" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_UserQuery"
+        android:name="ucla.erlab.brainresearch.studyui.questions.SubjectQuestionsFragment"
+        android:label="@string/title_subjectQuestions"
+        tools:layout="@layout/fragment_subjectquestions">
+        <action
+            android:id="@+id/action_UserQueryToConnPulseOx"
+            app:popUpTo="@+id/navigation_ConnPulseOx" />
+
+        <action
+            android:id="@+id/action_UserQueryToUserQueryTest"
+            app:destination="@+id/navigation_UserQueryTest" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_UserQueryTest"
+        android:name="ucla.erlab.brainresearch.studyui.questions.SubjectQuestionsTestFragment"
+        android:label="@string/title_subjectQuestions"
+        tools:layout="@layout/fragment_subjectquestions_test">
+        <action
+            android:id="@+id/action_UserQueryTestToUserQuery"
+            app:popUpTo="@+id/navigation_UserQuery" />
+
+
+        <action
+            android:id="@+id/action_UserQueryTestToPlanQuery"
+            app:destination="@+id/navigation_PlanQuery" />
+        <action
+            android:id="@+id/action_UserQueryTestToDayQuery"
+            app:destination="@+id/navigation_DayQuery" />
+        <action
+            android:id="@+id/action_UserQueryTestToBP1"
+            app:destination="@+id/navigation_BloodPressure1" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_PlanQuery"
+        android:name="ucla.erlab.brainresearch.studyui.questions.ProtocolQuestionsFragment"
+        android:label="@string/title_protocolQuestions"
+        tools:layout="@layout/fragment_protocolquestions">
+        <action
+            android:id="@+id/action_PlanQueryToConnPulseOx"
+            app:popUpTo="@+id/navigation_ConnPulseOx" />
+        <action
+            android:id="@+id/action_PlanQueryToUserQueryTest"
+            app:popUpTo="@+id/navigation_UserQueryTest" />
+
+        <action
+            android:id="@+id/action_PlanQueryToPlanQueryTest"
+            app:destination="@+id/navigation_PlanQueryTest" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_PlanQueryTest"
+        android:name="ucla.erlab.brainresearch.studyui.questions.ProtocolQuestionsTestFragment"
+        android:label="@string/title_protocolQuestions"
+        tools:layout="@layout/fragment_protocolquestions_test">
+        <action
+            android:id="@+id/action_PlanQueryTestToPlanQuery"
+            app:popUpTo="@+id/navigation_PlanQuery" />
+
+        <action
+            android:id="@+id/action_PlanQueryTestToDayQuery"
+            app:destination="@+id/navigation_DayQuery" />
+        <action
+            android:id="@+id/action_PlanQueryTestToBP1"
+            app:destination="@+id/navigation_BloodPressure1" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_DayQuery"
+        android:name="ucla.erlab.brainresearch.studyui.questions.DayQuestionsFragment"
+        android:label="@string/title_dayQuestions"
+        tools:layout="@layout/fragment_dayquestions" >
+        <action
+            android:id="@+id/action_DayQueryToConnPulseOx"
+            app:popUpTo="@+id/navigation_ConnPulseOx" />
+        <action
+            android:id="@+id/action_DayQueryToUserQueryTest"
+            app:popUpTo="@+id/navigation_UserQueryTest" />
+        <action
+            android:id="@+id/action_DayQueryToPlanQueryTest"
+            app:popUpTo="@+id/navigation_PlanQueryTest" />
+
+        <action
+            android:id="@+id/action_DayQueryToDayQueryTest"
+            app:destination="@+id/navigation_DayQueryTest" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_DayQueryTest"
+        android:name="ucla.erlab.brainresearch.studyui.questions.DayQuestionsTestFragment"
+        android:label="@string/title_dayQuestions"
+        tools:layout="@layout/fragment_dayquestions_test">
+        <action
+            android:id="@+id/action_DayQueryTestToDayQuery"
+            app:popUpTo="@+id/navigation_DayQuery" />
+
+        <action
+            android:id="@+id/action_DayQueryTestToBP1"
+            app:destination="@+id/navigation_BloodPressure1" />
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/navigation_BloodPressure1"
+        android:name="ucla.erlab.brainresearch.studyui.bloodpressure.BloodPressureFragment"
+        android:label="@string/title_bloodPressure1"
+        tools:layout="@layout/fragment_bloodpressure">
+        <action
+            android:id="@+id/action_BP1ToConnPulseOx"
+            app:popUpTo="@+id/navigation_ConnPulseOx" />
+        <action
+            android:id="@+id/action_BP1ToUserQueryTest"
+            app:popUpTo="@+id/navigation_UserQueryTest" />
+        <action
+            android:id="@+id/action_BP1ToPlanQueryTest"
+            app:popUpTo="@+id/navigation_PlanQueryTest" />
+        <action
+            android:id="@+id/action_BP1ToDayQueryTest"
+            app:popUpTo="@+id/navigation_DayQueryTest" />
+
+        <action
+            android:id="@+id/action_BP1ToRest1"
+            app:destination="@+id/navigation_Rest1" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_Rest1"
+        android:name="ucla.erlab.brainresearch.studyui.rest.RestFragment"
+        android:label="@string/title_rest1"
+        tools:layout="@layout/fragment_rest" >
+        <action
+            android:id="@+id/action_Rest1ToBP1"
+            app:popUpTo="@+id/navigation_BloodPressure1" />
+
+        <action
+            android:id="@+id/action_Rest1ToBP2"
+            app:destination="@+id/navigation_BloodPressure2" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_BloodPressure2"
+        android:name="ucla.erlab.brainresearch.studyui.bloodpressure.BloodPressureFragment"
+        android:label="@string/title_bloodPressure2"
+        tools:layout="@layout/fragment_bloodpressure">
+        <action
+            android:id="@+id/action_BP2ToRest1"
+            app:popUpTo="@+id/navigation_Rest1" />
+
+        <action
+            android:id="@+id/action_BP2ToValsalva"
+            app:destination="@+id/navigation_Valsalva" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_Valsalva"
+        android:name="ucla.erlab.brainresearch.studyui.valsalva.ValsalvaFragment"
+        android:label="@string/title_valsalva"
+        tools:layout="@layout/fragment_valsalva">
+        <action
+            android:id="@+id/action_ValsalvaToBP2"
+            app:popUpTo="@+id/navigation_BloodPressure2" />
+
+        <action
+            android:id="@+id/action_ValsalvaToRest2"
+            app:destination="@+id/navigation_Rest2" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_Rest2"
+        android:name="ucla.erlab.brainresearch.studyui.rest.RestFragment"
+        android:label="@string/title_rest2"
+        tools:layout="@layout/fragment_rest" >
+        <action
+            android:id="@+id/action_Rest2ToValsalva"
+            app:popUpTo="@+id/navigation_Valsalva" />
+
+        <action
+            android:id="@+id/action_Rest2ToValsalvaTest"
+            app:destination="@+id/navigation_ValsalvaTest" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_ValsalvaTest"
+        android:name="ucla.erlab.brainresearch.studyui.valsalva.ValsalvaTestFragment"
+        android:label="@string/title_valsalvaTest"
+        tools:layout="@layout/fragment_valsalva_test">
+        <action
+            android:id="@+id/action_ValsalvaTestToRest2"
+            app:popUpTo="@+id/navigation_Rest2" />
+
+        <action
+            android:id="@+id/action_ValsalvaTestToRest3"
+            app:destination="@+id/navigation_Rest3" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_Rest3"
+        android:name="ucla.erlab.brainresearch.studyui.rest.RestFragment"
+        android:label="@string/title_rest3"
+        tools:layout="@layout/fragment_rest">
+        <action
+            android:id="@+id/action_Rest3ToValsalvaTest"
+            app:popUpTo="@+id/navigation_ValsalvaTest" />
+
+        <action
+            android:id="@+id/action_Rest3ToBP3"
+            app:destination="@+id/navigation_BloodPressure3" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_BloodPressure3"
+        android:name="ucla.erlab.brainresearch.studyui.bloodpressure.BloodPressureFragment"
+        android:label="@string/title_bloodPressure3"
+        tools:layout="@layout/fragment_bloodpressure" >
+        <action
+            android:id="@+id/action_BP3ToRest3"
+            app:popUpTo="@+id/navigation_Rest3" />
+
+        <action
+            android:id="@+id/action_BP3ToBreathHold"
+            app:destination="@+id/navigation_BreathHold" />
+        <action
+            android:id="@+id/action_BP3ToPvt"
+            app:destination="@+id/navigation_Pvt" />
+        <action
+            android:id="@+id/action_BP3ToStroop"
+            app:destination="@+id/navigation_Stroop" />
+        <action
+            android:id="@+id/action_BP3ToStressDown"
+            app:destination="@+id/navigation_StressReduce" />
+        <action
+            android:id="@+id/action_BP3ToFinish"
+            app:destination="@+id/navigation_Finish" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_BreathHold"
+        android:name="ucla.erlab.brainresearch.studyui.breathhold.BreathHoldFragment"
+        android:label="@string/title_breathHold"
+        tools:layout="@layout/fragment_breathhold">
+        <action
+            android:id="@+id/action_BreathHoldToBP3"
+            app:popUpTo="@+id/navigation_BloodPressure3" />
+
+        <action
+            android:id="@+id/action_BreathHoldToRest4"
+            app:destination="@+id/navigation_Rest4" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_Rest4"
+        android:name="ucla.erlab.brainresearch.studyui.rest.RestFragment"
+        android:label="@string/title_rest4"
+        tools:layout="@layout/fragment_rest" >
+        <action
+            android:id="@+id/action_Rest4ToBreathHold"
+            app:popUpTo="@+id/navigation_BreathHold" />
+
+        <action
+            android:id="@+id/action_Rest4ToBreathHoldTest"
+            app:destination="@+id/navigation_BreathHoldTest" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_BreathHoldTest"
+        android:name="ucla.erlab.brainresearch.studyui.breathhold.BreathHoldTestFragment"
+        android:label="@string/title_breathHoldTest"
+        tools:layout="@layout/fragment_breathhold_test">
+        <action
+            android:id="@+id/action_BreathHoldTestToRest4"
+            app:popUpTo="@+id/navigation_Rest4" />
+
+        <action
+            android:id="@+id/action_BreathHoldTestToRest5"
+            app:destination="@+id/navigation_Rest5" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_Rest5"
+        android:name="ucla.erlab.brainresearch.studyui.rest.RestFragment"
+        android:label="@string/title_rest5"
+        tools:layout="@layout/fragment_rest">
+        <action
+            android:id="@+id/action_Rest5ToBreathHoldTest"
+            app:popUpTo="@+id/navigation_BreathHoldTest" />
+
+        <action
+            android:id="@+id/action_Rest5ToBP4"
+            app:destination="@+id/navigation_BloodPressure4" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_Pvt"
+        android:name="ucla.erlab.brainresearch.studyui.pvt.PvtFragment"
+        android:label="@string/title_pvt"
+        tools:layout="@layout/fragment_pvt">
+        <action
+            android:id="@+id/action_PvtToBP3"
+            app:popUpTo="@+id/navigation_BloodPressure3" />
+
+        <action
+            android:id="@+id/action_PvtToPvtTest"
+            app:destination="@+id/navigation_PvtTest" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_PvtTest"
+        android:name="ucla.erlab.brainresearch.studyui.pvt.PvtTestFragment"
+        android:label="@string/title_pvtTest"
+        tools:layout="@layout/fragment_pvt_test">
+        <action
+            android:id="@+id/action_PvtTestToPvt"
+            app:popUpTo="@+id/navigation_Pvt"/>
+
+        <action
+            android:id="@+id/action_PvtTestToBP4"
+            app:destination="@+id/navigation_BloodPressure4" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_Stroop"
+        android:name="ucla.erlab.brainresearch.studyui.stroop.StroopFragment"
+        android:label="@string/title_stroop"
+        tools:layout="@layout/fragment_stroop">
+        <action
+            android:id="@+id/action_StroopToBP3"
+            app:popUpTo="@+id/navigation_BloodPressure3" />
+
+        <action
+            android:id="@+id/action_StroopToStroopTest"
+            app:destination="@+id/navigation_StroopTest" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_StroopTest"
+        android:name="ucla.erlab.brainresearch.studyui.stroop.StroopTestFragment"
+        android:label="@string/title_stroopTest"
+        tools:layout="@layout/fragment_stroop_test">
+        <action
+            android:id="@+id/action_StroopTestToStroop"
+            app:popUpTo="@+id/navigation_Stroop"/>
+
+        <action
+            android:id="@+id/action_StroopTestToBP4"
+            app:destination="@+id/navigation_BloodPressure4" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_BloodPressure4"
+        android:name="ucla.erlab.brainresearch.studyui.bloodpressure.BloodPressureFragment"
+        android:label="@string/title_bloodPressure4"
+        tools:layout="@layout/fragment_bloodpressure">
+        <action
+            android:id="@+id/action_BP4ToRest5"
+            app:popUpTo="@+id/navigation_Rest5"/>
+        <action
+            android:id="@+id/action_BP4ToPvtTest"
+            app:popUpTo="@+id/navigation_PvtTest"/>
+        <action
+            android:id="@+id/action_BP4ToStroopTest"
+            app:popUpTo="@+id/navigation_StroopTest"/>
+
+        <action
+            android:id="@+id/action_BP4ToStressDown"
+            app:destination="@+id/navigation_StressReduce" />
+        <action
+            android:id="@+id/action_BP4ToFinish"
+            app:destination="@+id/navigation_Finish" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_StressReduce"
+        android:name="ucla.erlab.brainresearch.studyui.stress.StressReduceFragment"
+        android:label="@string/title_stressDown"
+        tools:layout="@layout/fragment_stressreduce">
+        <action
+            android:id="@+id/action_StressDownToBP3"
+            app:popUpTo="@+id/navigation_BloodPressure3"/>
+        <action
+            android:id="@+id/action_StressDownToBP4"
+            app:popUpTo="@+id/navigation_BloodPressure4"/>
+
+        <action
+            android:id="@+id/action_StressDownToStressDownTest"
+            app:destination="@+id/navigation_StressReduceTest" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_StressReduceTest"
+        android:name="ucla.erlab.brainresearch.studyui.stress.StressReduceTestFragment"
+        android:label="@string/title_stressDownTest"
+        tools:layout="@layout/fragment_stressreduce_test" >
+        <action
+            android:id="@+id/action_StressDownTestToStressDown"
+            app:popUpTo="@+id/navigation_StressReduce"/>
+
+        <action
+            android:id="@+id/action_StressDownTestToBP5"
+            app:destination="@+id/navigation_BloodPressure5" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_BloodPressure5"
+        android:name="ucla.erlab.brainresearch.studyui.bloodpressure.BloodPressureFragment"
+        android:label="@string/title_bloodPressure5"
+        tools:layout="@layout/fragment_bloodpressure">
+        <action
+            android:id="@+id/action_BP5ToStressDownTest"
+            app:popUpTo="@+id/navigation_StressReduceTest"/>
+
+        <action
+            android:id="@+id/action_BP5ToFinish"
+            app:destination="@+id/navigation_Finish" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_Finish"
+        android:name="ucla.erlab.brainresearch.studyui.finish.FinishFragment"
+        android:label="@string/title_finish"
+        tools:layout="@layout/fragment_finish">
+        <action
+            android:id="@+id/action_FinishToBP3"
+            app:destination="@+id/navigation_BloodPressure3" />
+        <action
+            android:id="@+id/action_FinishToBP4"
+            app:destination="@+id/navigation_BloodPressure4" />
+        <action
+            android:id="@+id/action_FinishToBP5"
+            app:destination="@+id/navigation_BloodPressure5" />
+    </fragment>
+
+</navigation>

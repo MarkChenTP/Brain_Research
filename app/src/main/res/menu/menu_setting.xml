@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ucla.erlab.brainresearchtest.SettingsActivity">
+    <item
+        android:id="@+id/action_exitSettings"
+        android:orderInCategory="1"
+        android:title="@string/action_exitSettings"
+        app:showAsAction="never" />
+</menu>

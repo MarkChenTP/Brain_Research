@@ -1,0 +1,293 @@
+<resources>
+    <string name="app_name">Brain Research</string>
+
+
+    <string name="title_main">Brain Research</string>
+    <string name="action_exitMain">Exit App</string>
+
+
+    <string name="title_study">Sleep Study</string>
+    <string name="action_loadData">Load Data</string>
+    <string name="action_saveData">Save Data</string>
+    <string name="action_exitStudy">Exit Study</string>
+
+
+    <string name="title_setting">User Settings</string>
+    <string-array name="protocol_entries">
+        <item>SR</item>
+        <item>IMT</item>
+    </string-array>
+    <string name="action_exitSettings">Exit Settings</string>
+
+
+    <string name="title_introduction">Introduction</string>
+    <string name="introduction_guide">
+        Are you ready?\n
+        \u2022 5~20 minutes without interruption\n
+        \u2022 Find a place you can sit comfortably\n
+        \u2022 Blood Pressure monitor\n
+        \t \u2023 With the cuff on your left arm\n
+        \u2022 Pulse oximeter\n
+        \t \u2023 On your left hand finger (not thumb)\n
+        \u2022 Valsalva box and tube\
+        \t \u2023 Power connected (red light on)\n
+    </string>
+
+
+    <string name="title_connPulseOx">Pulse Oximeter</string>
+    <string name="connPulseOx_guide">
+        Checking pulse oximeter connection…\n
+        \u2022 Place pulse oximeter on your finger\n
+        \u2022 Wait for green light and numbers\n
+        \u2022 Numbers appear on screen when connected\n
+        \u2022 Re-enter this page to reconnect\n
+    </string>
+
+
+    <string name="title_subjectQuestions">Subject Questions</string>
+    <string name="subjectQuestions_guide">
+        The subject questions find out your body status.\n
+        \nShare your experience (if applicable) on\n
+        \u2022 menstruating\n
+        \u2022 CPAP usage\n
+    </string>
+    <string name="title_subjectQuestionsTest">Subject Questions in Act</string>
+    <string name="subjectQuestion_menstruate">
+        Have your period started since the last study day?
+    </string>
+    <string-array name="subjectQuestion_menstruate_threeEntries">
+        <item>No</item>
+        <item>Less than 1 day</item>
+        <item>More than 1 day</item>
+    </string-array>
+    <string name="subjectQuestion_CPAP">
+        How long did you use CPAP in the past 24 hours?
+    </string>
+
+
+    <string name="title_protocolQuestions">Protocol Questions</string>
+    <string name="protocolQuestions_guide">
+        The protocol questions find out your body status.\n
+        \nShare your experience (if applicable) on\n
+        \u2022 noticing breathing\n
+        \u2022 multi-part strength\n
+    </string>
+    <string name="title_protocolQuestionsTest">Protocol Questions in Act</string>
+    <string name="protocolQuestion_breathing">
+       How many times did you take &gt;= 30 seconds to focus on your breathing in the past 24 hours?
+    </string>
+    <string-array name="protocolQuestions_breathing_fourEntries">
+        <item>0 times</item>
+        <item>1 to 2 times</item>
+        <item>3 to 5 times</item>
+        <item>more than 5 times</item>
+    </string-array>
+    <string name="protocolQuestion_strength">
+       Perform three Breathing Exercises.\n
+       \u2022 Enter the following values for each of them
+    </string>
+    <string name="protocolQuestion_sIndex">S-Index [cmH&#x2082;O]</string>
+    <string name="protocolQuestion_flow">Flow [l]</string>
+    <string name="protocolQuestion_volume">Volume [l/s]</string>
+    <string name="protocolQuestion_strengthNote">
+        (Optional) What successes or difficulties have you experienced during the Breathing Exercises?
+    </string>
+    <string name="protocolQuestion_changeNote">
+        (Optional) What changes have you noticed during the last week?
+    </string>
+
+    <string name="title_dayQuestions">Day Questions</string>
+    <string name="dayQuestions_guide">
+        The day questions find out how you have been doing and feeling.\n
+        \nShare your experience on\n
+        \u2022 daily activities\n
+        \u2022 emotional functioning\n
+        \u2022 social interactions\n
+    </string>
+    <string name="title_dayQuestionsTest">Day Questions in Act</string>
+    <string name="dayQuestion_sleepTime">
+        How long did you sleep last night?
+    </string>
+    <string name="dayQuestion_sleepRank">
+        Please rate your sleepiness today.\n
+        \u2022 From 0 = none to 10 = extremely high
+    </string>
+    <string name="dayQuestion_newExperience">
+        Did you experience anything out of your normal routine in the past 24 hours?
+    </string>
+    <string name="dayQuestion_newExperienceNote">
+        If yes, please write a brief description of what happened.
+    </string>
+    <string name="dayQuestion_emotion">
+        Answer the following for the past 24 hours:
+    </string>
+    <string name="dayQuestion_badLuckEmotion">
+        How often have you felt things were going your way?
+    </string>
+    <string name="dayQuestion_hardLifeEmotion">
+        How often have you felt difficulties were piling up so high that you could not overcome them?
+    </string>
+    <string name="dayQuestion_boredEmotion">
+        How often have you experienced little interest or little pleasure in doing things?
+    </string>
+    <string name="dayQuestion_depressEmotion">
+        How often have you felt down, depressed or hopeless?
+    </string>
+    <string name="dayQuestion_nervousEmotion">
+        How often have you felt nervous, anxious or on edge?
+    </string>
+    <string name="dayQuestion_worryEmotion">
+        How often have you not been able to stop or control worrying?
+    </string>
+    <string-array name="dayQuestions_emotion_fourEntries">
+        <item>Not at all</item>
+        <item>Several times</item>
+        <item>Fairly Often</item>
+        <item>The whole day</item>
+    </string-array>
+    <string-array name="dayQuestions_emotion_fiveEntries">
+        <item>Never</item>
+        <item>Almost Never</item>
+        <item>Sometimes</item>
+        <item>Fairly Often</item>
+        <item>Very Often</item>
+    </string-array>
+    <string name="dayQuestion_exerciseLevel">
+        How much did you exercise today?\n
+        \u2022 Minimal: &lt; 10 mins light exercise\n
+        \u2022 Low: &gt;= 10 mins light exercise\n
+        \u2022 Medium: &gt;= 60 mins light exercise\n
+        \t or &gt;= 30 mins moderate exercise\n
+        \u2022 High: &gt;= 180 mins light exercise\n
+        \t or &gt;= 60 mins moderate exercise\n
+        \t or &gt;= 20 mins vigorous exercise
+    </string>
+    <string-array name="dayQuestions_exercise_fourEntries">
+        <item>Minimal</item>
+        <item>Low</item>
+        <item>Medium</item>
+        <item>High</item>
+    </string-array>
+
+
+    <string name="title_bloodPressure1">Blood Pressure #1</string>
+    <string name="title_bloodPressure2">Blood Pressure #2</string>
+    <string name="title_bloodPressure3">Blood Pressure #3</string>
+    <string name="title_bloodPressure4">Blood Pressure #4</string>
+    <string name="title_bloodPressure5">Blood Pressure #5</string>
+    <string name="bloodPressure_guide">
+        Take the blood pressure measurements.\n
+        \u2022 Enter the following values\n
+    </string>
+
+
+    <string name="title_rest1">Rest</string>
+    <string name="rest_independent_guide">
+        Sit comfortably and enjoy a rest.\n
+        \u2022 The rest ends when the timer is finished
+    </string>
+    <string name="title_rest2">Pre-Valsalva Rest</string>
+    <string name="rest_preValsalva_guide">
+        Wait for the screen to change.\n
+        \u2022 The rest ends when the timer is finished
+    </string>
+    <string name="title_rest3">Post-Valsalva Rest</string>
+    <string name="rest_postValsalva_guide">
+        Breathe normally and take off the valsalsa tube.\n
+        \u2022 The rest ends when the timer is finished
+    </string>
+    <string name="title_rest4">Pre-Breath Hold Rest</string>
+    <string name="rest_breathHold_guide1">
+        Wait for the screen to change.\n
+        \u2022 The rest ends when the timer is finished
+    </string>
+    <string name="title_rest5">Post-Breath Hold Rest</string>
+    <string name="rest_breathHold_guide2">
+        Breathe normally.\n
+        \u2022 The rest ends when the timer is finished
+    </string>
+
+
+    <string name="title_valsalva">Valsalva</string>
+    <string name="valsalva_guide">
+        Ready for Valsalva Challenge!\n
+        \n
+        Steps of Valsalva Challenge:\n
+        \u2022 Once you begin, a rest period will start\n
+        \u2022 Wait for the screen to change\n
+        \u2022 Take a deep breath, then blow into the valsalsa tube so the green light is on\n
+        \u2022 When the screen changes back, a second rest period will start\n
+        \u2022 Breathe normally and take off the valsalsa tube\n
+        \u2022 Wait till end of second rest period\n
+    </string>
+    <string name="title_valsalvaTest">Valsalva in Act</string>
+    <string name="valsalvaTest_guide">
+        Take a deep breath, then blow into the tube so the green light is on.\n
+    </string>
+
+
+    <string name="title_breathHold">Breath Hold</string>
+    <string name="breathHold_guide">
+        Ready for Breath Hold Challenge!\n
+        \n
+        Steps of Breath Hold Challenge:\n
+        \u2022 Once you begin, a rest period will start\n
+        \u2022 Wait for the screen to change\n
+        \u2022 Breathe all the way out, breath in fully, and hold\n
+        \u2022 When the screen changes back, a second rest period will start\n
+        \u2022 Breathe normally\n
+        \u2022 Wait till end of second rest period\n
+    </string>
+    <string name="title_breathHoldTest">Breath Hold in Act</string>
+    <string name="breathHoldTest_guide">
+        Breathe all the way out, breath in fully, and hold.\n
+    </string>
+
+
+    <string name="title_pvt">PVT</string>
+    <string name="pvt_guide">
+        Ready for Reaction Time Test!\n
+        \nSteps of Reaction Time Test:\n
+        \u2022 When you see a red dot, tap the screen\n
+    </string>
+    <string name="title_pvtTest">PVT in Act</string>
+    <string name="pvtTest_guide">
+        Tap the red dot when it appears on the screen.\n
+    </string>
+
+
+    <string name="title_stroop">Stroop</string>
+    <string name="stroop_guide">
+        Ready for Stroop Challenge!\n
+        \nSteps of Stroop Challenge:\n
+        \u2022 Names of colors appear on the screen\n
+        \u2022 Pick the color of a word by ignoring the actual text\n
+    </string>
+    <string name="title_stroopTest">Stroop in Act</string>
+    <string name="stroopTest_guide">
+        Pick the color of a word by ignoring the actual text.\n
+    </string>
+
+
+    <string name="title_stressDown">Stress Reduction</string>
+    <string name="stressDown_guide">
+        Ready for Breathing Awareness!\n
+        \nSteps of Breathing Awareness:\n
+        \u2022 Sit comfortably for about 10 minutes\n
+        \u2022 Follow the music to practice your breathing\n
+    </string>
+    <string name="stressDown_audio">
+        Select your audio:
+    </string>
+    <string name="title_stressDownTest">Stress Reduction in Act</string>
+    <string name="stressDownTest_guide">
+        Follow the music to practice your breathing.\n
+    </string>
+
+
+    <string name="title_finish">Congratulation</string>
+    <string name="finish_guide">
+        You have finished today’s sleep study.
+    </string>
+
+</resources>

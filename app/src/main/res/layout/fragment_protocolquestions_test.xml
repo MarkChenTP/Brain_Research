@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:screenOrientation="portrait"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="ucla.erlab.brainresearch.studyui.questions.ProtocolQuestionsTestFragment">
+
+    <!--
+    <TextView
+        android:id="@+id/text_ProtocolQuestionsTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+    -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/button_Back">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linearLayout_SR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/textView_noticeBreathing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="@string/protocolQuestion_breathing"
+                    android:textSize="16sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:background="#E7E7E7"
+                    android:orientation="horizontal">
+                    <Spinner
+                        style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                        android:id="@+id/spinner_noticeBreathing"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:entries="@array/protocolQuestions_breathing_fourEntries"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout_IMT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/textView_strength"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:text="@string/protocolQuestion_strength"
+                    android:textSize="16sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Breathing Exercise #1:"
+                        android:textSize="16sp" />
+                    <LinearLayout
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:labelFor="@+id/editText_strength_sIndex1"
+                            android:text="@string/protocolQuestion_sIndex"
+                            android:textSize="16sp" />
+                        <EditText
+                            android:id="@+id/editText_strength_sIndex1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:autofillHints=""
+                            android:text="0.0"
+                            android:inputType="numberDecimal"
+                            android:singleLine="true"
+                            android:gravity="center" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:labelFor="@+id/editText_strength_flow1"
+                            android:text="@string/protocolQuestion_flow"
+                            android:textSize="16sp" />
+                        <EditText
+                            android:id="@+id/editText_strength_flow1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:autofillHints=""
+                            android:text="0.0"
+                            android:inputType="numberDecimal"
+                            android:singleLine="true"
+                            android:gravity="center" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:labelFor="@+id/editText_strength_volume1"
+                            android:text="@string/protocolQuestion_volume"
+                            android:textSize="16sp" />
+                        <EditText
+                            android:id="@+id/editText_strength_volume1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:autofillHints=""
+                            android:text="0.0"
+                            android:inputType="numberDecimal"
+                            android:singleLine="true"
+                            android:imeOptions="actionDone"
+                            android:gravity="center" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Breathing Exercise #2:"
+                        android:textSize="16sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:labelFor="@+id/editText_strength_sIndex2"
+                            android:text="@string/protocolQuestion_sIndex"
+                            android:textSize="16sp" />
+                        <EditText
+                            android:id="@+id/editText_strength_sIndex2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:autofillHints=""
+                            android:text="0.0"
+                            android:inputType="numberDecimal"
+                            android:singleLine="true"
+                            android:gravity="center" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:labelFor="@+id/editText_strength_flow2"
+                            android:text="@string/protocolQuestion_flow"
+                            android:textSize="16sp" />
+                        <EditText
+                            android:id="@+id/editText_strength_flow2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:autofillHints=""
+                            android:text="0.0"
+                            android:inputType="numberDecimal"
+                            android:singleLine="true"
+                            android:gravity="center" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:labelFor="@+id/editText_strength_volume2"
+                            android:text="@string/protocolQuestion_volume"
+                            android:textSize="16sp" />
+                        <EditText
+                            android:id="@+id/editText_strength_volume2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:autofillHints=""
+                            android:text="0.0"
+                            android:inputType="numberDecimal"
+                            android:singleLine="true"
+                            android:imeOptions="actionDone"
+                            android:gravity="center"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Breathing Exercise #3:"
+                        android:textSize="16sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:labelFor="@+id/editText_strength_sIndex3"
+                            android:text="@string/protocolQuestion_sIndex"
+                            android:textSize="16sp" />
+                        <EditText
+                            android:id="@+id/editText_strength_sIndex3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:autofillHints=""
+                            android:text="0.0"
+                            android:inputType="numberDecimal"
+                            android:singleLine="true"
+                            android:gravity="center"  />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:labelFor="@+id/editText_strength_flow3"
+                            android:text="@string/protocolQuestion_flow"
+                            android:textSize="16sp" />
+                        <EditText
+                            android:id="@+id/editText_strength_flow3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:autofillHints=""
+                            android:text="0.0"
+                            android:inputType="numberDecimal"
+                            android:singleLine="true"
+                            android:gravity="center" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:labelFor="@+id/editText_strength_volume3"
+                            android:text="@string/protocolQuestion_volume"
+                            android:textSize="16sp" />
+                        <EditText
+                            android:id="@+id/editText_strength_volume3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:autofillHints=""
+                            android:text="0.0"
+                            android:inputType="numberDecimal"
+                            android:singleLine="true"
+                            android:imeOptions="actionDone"
+                            android:gravity="center" />
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/textView_strengthNote"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:labelFor="@+id/editText_strengthNote"
+                    android:text="@string/protocolQuestion_strengthNote"
+                    android:textSize="16sp"/>
+                <EditText
+                    android:id="@+id/editText_strengthNote"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:autofillHints=""
+                    android:text=""
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:imeOptions="actionDone" />
+                <TextView
+                    android:id="@+id/textView_changeNote"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:labelFor="@+id/editText_changeNote"
+                    android:text="@string/protocolQuestion_changeNote"
+                    android:textSize="16sp"/>
+                <EditText
+                    android:id="@+id/editText_changeNote"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:autofillHints=""
+                    android:text=""
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:imeOptions="actionDone" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <Button
+        style="@style/Widget.AppCompat.Button"
+        android:id="@+id/button_Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintVertical_bias="0.95"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        style="@style/Widget.AppCompat.Button"
+        android:id="@+id/button_Next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintVertical_bias="0.95"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

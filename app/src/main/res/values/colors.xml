@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="colorPrimaryAlternate">#2196F3</color>
+    <color name="colorPrimaryDarkAlternate">#1976D2</color>
+    <color name="colorAccentAlternate">#FF8C00</color>
+
+    <color name="Red">#FF0000</color>
+    <color name="DarkCyan">#008B8B</color>
+    <color name="DodgerBlue">#1E90FF</color>
+
+</resources>
