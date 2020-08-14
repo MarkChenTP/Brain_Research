@@ -1,8 +1,31 @@
+/*
+ * Copyright (c) 2020 Mark Chen (@MarkChenTP, https://github.com/MarkChenTP)
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
 /**
  *  StudyActivity.java
  *  Created by: Mark Chen
  *  Last Modified: 08/14/2020
  */
+
 package ucla.erlab.brainresearch;
 
 import android.app.Activity;
@@ -100,7 +123,9 @@ public class StudyActivity extends AppCompatActivity {
     private HashMap<String, String> bloodPressures;     // systolic, diastolic, pulse values from blood pressure cuff
     private ArrayList<String> pvtShowRedDotTimes;
     private ArrayList<String> pvtTouchRedDotTimes;
+    private ArrayList<String> stroopNames;
     private ArrayList<String> stroopColors;
+
     private ArrayList<String> stroopResponses;
     private ArrayList<String> stroopResults;
     private String stressDownAudioChoice;
@@ -345,8 +370,12 @@ public class StudyActivity extends AppCompatActivity {
         pvtTouchRedDotTimes = touchRedDotTimesData;
     }
 
-    public void setStroopColors(ArrayList<String> colorNamesData) {
-        stroopColors = colorNamesData;
+
+    public void setStroopNames(ArrayList<String> colorNamesData) {
+        stroopNames = colorNamesData;
+    }
+    public void setStroopColors(ArrayList<String> colorColorsData) {
+        stroopColors = colorColorsData;
     }
     public void setStroopResponses(ArrayList<String> colorResponsesData) {
         stroopResponses = colorResponsesData;
@@ -513,6 +542,7 @@ public class StudyActivity extends AppCompatActivity {
         pvtShowRedDotTimes = new ArrayList<>();
         pvtTouchRedDotTimes = new ArrayList<>();
 
+        stroopNames = new ArrayList<>();
         stroopColors = new ArrayList<>();
         stroopResponses = new ArrayList<>();
         stroopResults = new ArrayList<>();
@@ -630,6 +660,13 @@ public class StudyActivity extends AppCompatActivity {
                 }
                 pvtDone = true;
 
+
+                String stroopNameData = studyData.get("StroopName");
+                if (stroopNameData == null) stroopNameData = "";
+                if (!stroopNameData.equals("")) {
+                    String[] stroopNameStream = stroopNameData.split(", ");
+                    stroopNames = new ArrayList<>(Arrays.asList(stroopNameStream));
+                }
                 String stroopColorData = studyData.get("StroopColor");
                 if (stroopColorData == null) stroopColorData = "";
                 if (!stroopColorData.equals("")) {
@@ -810,9 +847,12 @@ public class StudyActivity extends AppCompatActivity {
         studyData.put("PVTShowRedDot", pvtShowRedDot);
         studyData.put("PVTTouchRedDot", pvtTouchRedDot);
 
+        String stroopName = TextUtils.join(", ", stroopNames);
         String stroopColor = TextUtils.join(", ", stroopColors);
         String stroopResponse = TextUtils.join(", ", stroopResponses);
         String stroopResult = TextUtils.join(", ", stroopResults);
+
+        studyData.put("StroopName", stroopName);
         studyData.put("StroopColor", stroopColor);
         studyData.put("StroopResponse", stroopResponse);
         studyData.put("StroopResult", stroopResult);
@@ -893,9 +933,12 @@ public class StudyActivity extends AppCompatActivity {
             // every 6 days with offset 4 (day 5, 11, 17...)
             userProfile.child("BloodPressure-PostStroop").setValue(bloodPressures.get("BloodPressure4"));
 
+            String stroopName = "[" + TextUtils.join(", ", stroopNames) + "]";
             String stroopColor = "[" + TextUtils.join(", ", stroopColors) + "]";
             String stroopResponse = "[" + TextUtils.join(", ", stroopResponses) + "]";
             String stroopResult = "[" + TextUtils.join(", ", stroopResults) + "]";
+
+            userProfile.child("Stroop-Names").setValue(stroopName);
             userProfile.child("Stroop-Colors").setValue(stroopColor);
             userProfile.child("Stroop-Responses").setValue(stroopResponse);
             userProfile.child("Stroop-Results").setValue(stroopResult);

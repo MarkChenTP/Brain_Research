@@ -1,3 +1,25 @@
+/*
+ * Copyright (c) 2020 Mark Chen (@MarkChenTP, https://github.com/MarkChenTP)
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
 /**
  *  StroopTestFragment.java
  *  Created by: Mark Chen
@@ -20,14 +42,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import java.util.ArrayList;
@@ -44,17 +63,21 @@ public class StroopTestFragment extends Fragment {
     //private StroopTestViewModel stroopTestViewModel;
 
     private ArrayList<String> colorNames;
+    private ArrayList<String> colorColors;
     private ArrayList<String> colorResponses;
     private ArrayList<String> colorResults;
 
-    private final String[] mColorNames = { "Green", "Orange", "Blue", "Red", "Yellow", "Purple"};
-    private final String[] mColorRGBs = { "#008000", "#FFA500", "#0000FF", "#FF0000", "#FFFF00", "#800080"};
+    private final String[] mColorNames
+            = { "Green", "Orange", "Blue", "Red", "Yellow", "Purple"};            // Same indices as mColorRGBs
+    private final String[] mColorRGBs
+            = { "#008000", "#FFA500", "#0000FF", "#FF0000", "#FFFF00", "#800080"}; // Same indices as mColorNames
     private int stroopRounds;
     private Handler mHandler;
     private Runnable myStroopTask;
     private boolean mStroopTaskInit = false;
     private int stroopTaskCount;
-    private String mColor = "";
+    private String mColorName = "";
+    private String mColorColor = "";
 
     private LinearLayout stroopTestArea;
     private TextView stroopColor;
@@ -95,6 +118,7 @@ public class StroopTestFragment extends Fragment {
 
         // Initialize UI and Data
         colorNames = new ArrayList<>();
+        colorColors = new ArrayList<>();
         colorResponses = new ArrayList<>();
         colorResults = new ArrayList<>();
 
@@ -155,7 +179,8 @@ public class StroopTestFragment extends Fragment {
                         ((StudyActivity) activity).setStroopDone(true);
 
                         // Save Study Data
-                        ((StudyActivity) activity).setStroopColors(colorNames);
+                        ((StudyActivity) activity).setStroopNames(colorNames);
+                        ((StudyActivity) activity).setStroopColors(colorColors);
                         ((StudyActivity) activity).setStroopResponses(colorResponses);
                         ((StudyActivity) activity).setStroopResults(colorResults);
 
@@ -236,9 +261,8 @@ public class StroopTestFragment extends Fragment {
             stroopTestButtonsArea.setVisibility(View.VISIBLE);
 
             if (!mStroopTaskInit) {
-                colorNames.clear();
-                colorResponses.clear();
-                colorResults.clear();
+                colorNames.clear(); colorColors.clear();
+                colorResponses.clear(); colorResults.clear();
                 stroopTaskCount = 0;
 
                 mStroopTaskInit = true;
@@ -278,12 +302,16 @@ public class StroopTestFragment extends Fragment {
     private void makeStroopQuestion() {
         Random rand = new Random();
         int choice = rand.nextInt(Integer.MAX_VALUE) % mColorNames.length;
-        mColor = mColorNames[choice];
-        colorNames.add(mColor);
+        mColorName = mColorNames[choice];
+        colorNames.add(mColorName);
         stroopColor.setText(mColorNames[choice]);
 
         choice = rand.nextInt(Integer.MAX_VALUE) % mColorNames.length;
+        mColorColor = mColorNames[choice];
+        colorColors.add(mColorColor);
         stroopColor.setTextColor(Color.parseColor(mColorRGBs[choice]));
+
+
         stroopResult.setText("");
         toggleStroopButtons(true);
     }
@@ -291,7 +319,7 @@ public class StroopTestFragment extends Fragment {
     private void checkStroopAnswer(String answer) {
         colorResponses.add(answer);
 
-        if (mColor.equals(answer)) {
+        if (mColorName.equals(answer)) {
             stroopResult.setText("O");
             stroopResult.setTextColor(Color.parseColor("#008000"));
             colorResults.add("O");
