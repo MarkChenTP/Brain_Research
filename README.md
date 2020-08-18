@@ -18,7 +18,7 @@ Brain Research is an Android app that studys sleep apnea, a sleep disorder in wh
 ## Features
 
 ### Pulse Oximeter Readings
-The app connects to Nonin 9560 pulse oximeter via Bluetooth. Once the connection is made, the app continuously read and save the pulse and %SpO2 values measured by the device at both local storage and a Google Firebase database.
+The app connects to Nonin 9560 pulse oximeter via Bluetooth. Once the connection is made, the app continuously reads and saves the pulse and %SpO2 values measured by the device at both local storage and a Google Firebase database.
 
 <p align="center">
 	<img src="https://github.com/MarkChenTP/Brain_Research/blob/master/demo/pulseOx_app.png" height="480"/>
@@ -29,7 +29,7 @@ The app connects to Nonin 9560 pulse oximeter via Bluetooth. Once the connection
 <br/>
 
 ### Sleep Apnea Questionnaire
-The app has three sets of questions that query the user's body status and life expeience. For each study day, the user will answer the relevant questions by typing in their responses. The app save these responses at both local storage and a Google Firebase database.
+The app has three sets of questions that query the user's body status and life expeience. For each study day, the user will answer the relevant questions by typing in their responses. The app saves these responses at both local storage and a Google Firebase database.
 
 <p align="center">
 	<img src="https://github.com/MarkChenTP/Brain_Research/blob/master/demo/questionnaire_app.png" height="480"/>
@@ -40,7 +40,7 @@ The app has three sets of questions that query the user's body status and life e
 <br/>
 
 ### Blood Pressure
-For each study day, the user will enter their systolic pressure, diastolic pressure, and pulse values. The app save these responses at both local storage and a Google Firebase database.
+For each study day, the user will enter their systolic pressure, diastolic pressure, and pulse values. The app saves these responses at both local storage and a Google Firebase database.
 
 <p align="center">
 	<img src="https://github.com/MarkChenTP/Brain_Research/blob/master/demo/bloodPressure_app.png" height="480"/>
@@ -57,12 +57,12 @@ The Valsalva and breath hold challenges both consist a baseline resting phase, a
 	<br/>
 	<strong>Links to valsalva demo: https://github.com/MarkChenTP/Brain_Research/raw/master/demo/valsalva_demo.mp4</strong>
   <br/>
-  <strong>Links to breath hold demo: https://github.com/MarkChenTP/Brain_Research/raw/master/demo/questionnaire_demo.mp4</strong>
+  <strong>Links to breath hold demo: https://github.com/MarkChenTP/Brain_Research/raw/master/demo/breathHold_demo.mp4</strong>
 </p>
 <br/>
 
 ### PVT Challenge
-The PVT challenge asks the user to touch the red dots appear on the screen. The app save both the red dots' show-up times and the user's touch-response times at both local storage and a Google Firebase database.
+The PVT challenge asks the user to touch the red dots appear on the screen. The app saves both the red dots' show-up times and the user's touch-response times at both local storage and a Google Firebase database.
 
 <p align="center">
 	<img src="https://github.com/MarkChenTP/Brain_Research/blob/master/demo/pvt_app.png" height="480"/>
@@ -73,11 +73,37 @@ The PVT challenge asks the user to touch the red dots appear on the screen. The 
 <br/>
 
 ### Stroop Challenge
-The Stroop challenge asks the user to select the color that matches the color name appearing on the screen. The app save the on-screen color's name and color, the user's elected color, and the test result at both local storage and a Google Firebase database.
+The Stroop challenge asks the user to select the color that matches the color name appearing on the screen. The app saves the on-screen color's name and color, the user's elected color, and the test result at both local storage and a Google Firebase database.
+
+<p align="center">
+	<img src="https://github.com/MarkChenTP/Brain_Research/blob/master/demo/stroop_app.png" height="480"/>
+	<br/>
+	<br/>
+	<strong>Links to stroop demo: https://github.com/MarkChenTP/Brain_Research/raw/master/demo/stroop_demo_hand.mp4</strong>
+  </p>
 <br/>
 
 ### Stress Reduction Challenge
 The Stress Reduction challenge asks the user to practice a breathing exercise with an associated background music. The are two options of the breathing music for the user to select: music and guide or music only.
+
+<p align="center">
+	<img src="https://github.com/MarkChenTP/Brain_Research/blob/master/demo/stressReduce_app.png" height="480"/>
+	<br/>
+	<br/>
+	<strong>Links to stress reduction demo: https://github.com/MarkChenTP/Brain_Research/raw/master/demo/stressReduce_demo.mp4</strong>
+  </p>
+<br/>
+
+### Data Structure
+A Google Firebase database is used as the cloud storage of the app. The app will automatically upload the data from the host Android device 
+when the user exit or finish a day study.
+
+<p align="center">
+	<img src="https://github.com/MarkChenTP/Brain_Research/blob/master/demo/firebase_pulseOx.png" height="480"/>
+	<br/>
+	<img src="https://github.com/MarkChenTP/Brain_Research/blob/master/demo/firebase_study.png" height="480"/>
+	<br/>
+  </p>
 <br/>
 
 <a href="#table">Back to Table of Contents</a>
